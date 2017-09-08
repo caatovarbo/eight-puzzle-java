@@ -7,6 +7,8 @@ import pygame, sys, time
 from pygame.locals import *
 from py8puzzel import*
 
+from AI8puzzle.py8puzzel import puzzel
+
 puzzle=puzzel()
 #puzzle.Solve()
 
@@ -54,7 +56,7 @@ evt=False
 while True:
     # check for the QUIT event
     for event in pygame.event.get():
-        if event.type==MOUSEBUTTONDOWN and event.button==1:
+        if event.type == MOUSEBUTTONDOWN and event.button==1:
             evt=True
             
     while numShufles>0:
