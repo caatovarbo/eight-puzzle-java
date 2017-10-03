@@ -20,8 +20,6 @@ class State:
     def __str__(self):
         return self.str
 
-    # Goal configuration [0, 1, ..., k*k-1] has been hardcoded
-    # to get an efficient implementation
     def __moveCount__(self, i):
         if self.sig[i] == 0:
             return 0
@@ -75,12 +73,25 @@ def astar(start):
     return None
 
 if __name__ == "__main__":
-    k = int(raw_input())
+    k = 3;
+#    k = int(raw_input())
     N = k * k
+
+"""
+    - Entrada por consola
     pattern = [int(raw_input()) for i in xrange(N)]
-    goal = [i for i in xrange(N)]
+"""
+
+
+    goal = [i for i in xrange(1, N)]
+    pattern = [1, 2, 3, 4, 5, 6, 7, 8, 0]
+
+    goal.append(0)
     count, path = astar(State(pattern))
     moves = {'U':'UP', 'D':'DOWN', 'L':'LEFT', 'R':'RIGHT'}
-    print count
+    if count == 0:
+        print "Resuelto :)"
+    else:
+        print "Movimientos necesarios: ", count
     for move in path:
         print moves[move]

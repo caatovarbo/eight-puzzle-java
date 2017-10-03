@@ -118,15 +118,6 @@ class Puzzle:
                     moves.append(move)
         return moves
 
-    def shuffle(self):
-        """
-        Return a new puzzle that has been shuffled with 1000 random moves
-        """
-        puzzle = self
-        for _ in range(1000):
-            puzzle = random.choice(puzzle.actions)[0]()
-        return puzzle
-
     def copy(self):
         """
         Return a new puzzle with the same board as 'self'
@@ -159,15 +150,12 @@ class Puzzle:
         for row in self.board:
             yield from row
 
-
-# example of use
 board = [[1,2,3],[4,0,6],[7,5,8]]
 
 puzzle = Puzzle(board)
-#puzzle = puzzle.shuffle()
 s = Solver(puzzle)
 p = s.solve()
 
 for node in p:
     print(node.action)
-    node.puzzle.pprint()
+    #node.puzzle.pprint()
