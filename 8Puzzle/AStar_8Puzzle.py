@@ -77,11 +77,8 @@ if __name__ == "__main__":
 #    k = int(raw_input())
     N = k * k
 
-"""
-    - Entrada por consola
-    pattern = [int(raw_input()) for i in xrange(N)]
-"""
-
+#    - Entrada por consola
+#    pattern = [int(raw_input()) for i in xrange(N)]
 
     goal = [i for i in xrange(1, N)]
     pattern = [1, 2, 3, 4, 5, 6, 7, 8, 0]
